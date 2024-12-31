@@ -17,25 +17,18 @@ const int INF = 0x3f3f3f3f3f3f3f3f;
 const int MOD = 998244353;
 const int MN = 2e5+5;
 
-struct Fenwick {
-    vector<int> v;
-    int sz;
-    Fenwick(int n) {
-        v.resize(n+1, 0);
-        sz = n;
-    }
-    int lowbit(int x) { return x&-x; }
-    void modify(int p, int x) {
-        for(int i=p; i<=sz; i+=lowbit(i)) v[i] += x;
-    }
-    int query(int p) {
-        int sum = 0;
-        for(int i=p; i>0; i-=lowbit(i)) sum += v[i];
-        return sum;
-    }
-};
-
 signed main() {
     hyper;
-    
+    int n, d, a[3];
+    int cnt = 0, sum = 0;
+    cin >> n >> d;
+    rep(i,0,n) {
+        rep(j,0,3) cin >> a[j];
+        sort(a, a+3);
+        if(a[2] - a[0] >= d) {
+            ++cnt;
+            sum += (a[0] + a[1] + a[2]) / 3;
+        }
+    }
+    cout << cnt << ' ' << sum << '\n';
 }

@@ -11,6 +11,8 @@
 #define hyper ios::sync_with_stdio(0); cin.tie(0)
 using namespace std;
 using pii = pair<int,int>;
+using vi = vector<int>;
+const int IINF = 0x3f3f3f3f;
 const int INF = 0x3f3f3f3f3f3f3f3f;
 const int MOD = 998244353;
 const int MN = 2e5+5;
