@@ -5,3 +5,6 @@
 
 # windows executables
 *.exe
+
+main.cpp
+main

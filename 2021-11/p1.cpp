@@ -20,5 +20,13 @@ const int MN = 2e5+5;
 
 signed main() {
     hyper;
-    
+    int n, h[105];
+    cin >> n;
+    rep1(i,1,n) cin >> h[i];
+    h[0] = h[n+1] = INF;
+    int ans = 0;
+    rep1(i,1,n) {
+        if(!h[i]) ans += min(h[i-1], h[i+1]);
+    }
+    cout << ans << '\n';
 }
